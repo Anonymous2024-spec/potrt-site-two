@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
+
 import {
   Github,
   Linkedin,
@@ -13,7 +14,6 @@ import {
   ChevronDown,
   Menu,
   X,
-  Play,
 } from "lucide-react";
 import PitchVideo from "./PitchVideo";
 
