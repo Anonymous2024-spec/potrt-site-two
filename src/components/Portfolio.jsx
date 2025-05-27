@@ -16,6 +16,7 @@ import {
   X,
 } from "lucide-react";
 import PitchVideo from "./PitchVideo";
+import ContactSection from "./Contact";
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -315,62 +316,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-800/50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Featured Projects
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4 text-sm">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex space-x-4">
-                    <a
-                      href={project.github}
-                      className="flex items-center text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Github className="w-4 h-4 mr-1" />
-                      Code
-                    </a>
-                    <a
-                      href={project.demo}
-                      className="flex items-center text-gray-400 hover:text-white transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+     <ContactSection personalInfo={personalInfo}/>
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="max-w-4xl mx-auto px-4">

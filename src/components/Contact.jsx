@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Mail, Linkedin, Github, Phone } from "lucide-react";
 
-const ContactSection = () => {
+const ContactSection = ({ personalInfo }) => {
   const form = useRef();
 
   const handleContactSubmit = (e) => {
@@ -9,10 +10,10 @@ const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_89t6kkm", // Replace with your EmailJS service ID
-        "template_qi83ef1", // Replace with your EmailJS template ID
+        "service_89t6kkm", // Your EmailJS service ID
+        "template_qi83ef1", // Your EmailJS template ID
         form.current,
-        "q0LB9i67ynF1UTMxm" // Replace with your EmailJS public key
+        "q0LB9i67ynF1UTMxm" // Your EmailJS public key
       )
       .then(
         (result) => {
@@ -32,7 +33,51 @@ const ContactSection = () => {
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16">Get In Touch</h2>
         <div className="grid md:grid-cols-2 gap-12">
-          {/* ... contact info remains unchanged ... */}
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
+            <p className="text-gray-400 mb-8">
+              I'm always interested in new opportunities and exciting projects.
+              Whether you have a question or just want to say hi, feel free to
+              reach out!
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <Mail className="w-5 h-5 text-blue-400 mr-3" />
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  {personalInfo.email}
+                </a>
+              </div>
+              <div className="flex items-center">
+                <Phone className="w-5 h-5 text-blue-400 mr-3" />
+                <a
+                  href={`tel:${personalInfo.phone}`}
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  {personalInfo.phone}
+                </a>
+              </div>
+            </div>
+
+            <div className="flex space-x-6 mt-8">
+              <a
+                href={personalInfo.github}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
 
           {/* Contact Form */}
           <form ref={form} onSubmit={handleContactSubmit} className="space-y-6">
