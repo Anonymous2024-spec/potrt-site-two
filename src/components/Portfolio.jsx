@@ -40,23 +40,30 @@ const Portfolio = () => {
   const skills = [
     {
       category: "Frontend",
-      items: ["React", "HTML", "Boostrap", "Tailwind CSS", "Javascript"],
-      icon: <Globe className="w-6 h-6" />,
+      icon: "🎨",
+      items: [
+        "HTML5",
+        "Tailwind CSS",
+        "Bootstrap",
+        "React",
+        "TypeScript",
+        "Next.js",
+      ],
     },
     {
       category: "Backend",
-      items: ["PHP", "Python", "Express.js"],
-      icon: <Code className="w-6 h-6" />,
+      icon: "🛠️",
+      items: ["PHP", "Node.js (Express)"],
     },
     {
       category: "Database",
+      icon: "🗄️",
       items: ["MongoDB", "MySQL"],
-      icon: <Database className="w-6 h-6" />,
     },
     {
       category: "Mobile",
+      icon: "📱",
       items: ["React Native"],
-      icon: <Smartphone className="w-6 h-6" />,
     },
   ];
 
