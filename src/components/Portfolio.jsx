@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 import {
   Github,
@@ -14,6 +14,7 @@ import {
   ChevronDown,
   Menu,
   X,
+  MapPin,
 } from "lucide-react";
 import PitchVideo from "./PitchVideo";
 import ContactSection from "./Contact";
@@ -316,7 +317,66 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-     <ContactSection personalInfo={personalInfo}/>
+      <section id="projects" className="py-20 bg-gray-800/50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Featured <span className="text-blue-400">Projects</span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4 text-sm">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex space-x-4">
+                    <a
+                      href={project.github}
+                      className="flex items-center text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Github className="w-4 h-4 mr-1" />
+                      Code
+                    </a>
+                    <a
+                      href={project.demo}
+                      className="flex items-center text-gray-400 hover:text-white transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-1" />
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20">
         <div className="max-w-4xl mx-auto px-4">
@@ -405,11 +465,111 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            © 2025 {personalInfo.name}. Built with love & dedication.
-          </p>
+      <footer className="bg-gray-800 py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Navigation Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Navigation</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#home"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#about"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#skills"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Skills
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Projects
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Location & Contact */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Location</h3>
+              <div className="space-y-2">
+                <p className="text-gray-400 flex items-center">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Gulu City, Uganda
+                </p>
+                <p className="text-gray-400 flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  {personalInfo.email}
+                </p>
+                <p className="text-gray-400 flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  {personalInfo.phone}
+                </p>
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Connect</h3>
+              <div className="flex space-x-4">
+                <a
+                  href={personalInfo.github}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Github className="w-6 h-6" />
+                </a>
+                <a
+                  href={personalInfo.linkedin}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Mail className="w-6 h-6" />
+                </a>
+              </div>
+              <p className="text-gray-400 mt-4 text-sm">
+                Let's connect and collaborate on exciting projects!
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2025 {personalInfo.name}. Built with love & dedication in
+              Uganda.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
