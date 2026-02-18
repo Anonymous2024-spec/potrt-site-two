@@ -26,15 +26,15 @@ const Portfolio = () => {
   // Sample data - replace with your actual information
   const personalInfo = {
     name: "Naana Shifah",
-    title: "Frontend Software Engineer",
+    title: "Full Stack Software Developer",
     email: "nanashifah2@gmail.com",
     phone: "+256 779684042",
     location: "Gulu City, ",
     github: "https://github.com/Anonymous2024-spec",
-    linkedin: "nkedin.com/in/shifah-naana-18966b281/",
+    linkedin: "linkedin.com/in/shifah-naana-18966b281/",
     elevatorPitch:
-      "Creative frontend developer with a strong eye for design and a focus on building responsive, accessible, and performant web interfaces. I enjoy turning ideas into interactive experiences that users love.",
-    bio: "I'm a frontend developer with a passion for clean design, smooth user interactions, and modern JavaScript frameworks. I specialize in building responsive, accessible interfaces using tools like React, Tailwind CSS, and Next.js. Whether working solo or with a team, I aim to create intuitive products that offer real value and a great user experience.",
+      "Creative Full stack developer with a strong eye for design and a focus on building responsive, accessible, and performant web interfaces. I enjoy turning ideas into interactive experiences that users love.",
+    bio: "I’m a full stack developer focused on building reliable, user-centered applications from end to end. I work across the stack using modern JavaScript technologies, including React, Next.js, Node.js, and Tailwind CSS, to deliver responsive interfaces and well-structured backend systems. I care about clean architecture, maintainable code, and thoughtful design. Whether I’m developing APIs, managing databases, or refining the frontend experience, my goal is to ship products that are practical, scalable, and genuinely useful.",
   };
 
   const skills = [
@@ -69,14 +69,24 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Eventease",
       description:
-        "Full-stack e-commerce solution with React frontend, Node.js backend, and PostgreSQL database. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      github: "https://github.com/johndoe/ecommerce",
-      demo: "https://demo-ecommerce.com",
+        "Comprehensive event management platform with intuitive interface for creating, organizing, and managing events. Features include event registration, attendee management, and real-time event updates.",
+      technologies: ["HTML5", "CSS", "Bootstrap", "PHP", "JavaScript"],
+      github: "https://github.com/yourusername/eventease",
+      demo: "https://demo-eventease.com",
       image:
-        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%234f46e5'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='white'%3EE-Commerce%3C/text%3E%3C/svg%3E",
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23e11d48'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='white'%3EEventease%3C/text%3E%3C/svg%3E",
+    },
+    {
+      title: "Finsight",
+      description:
+        "Advanced financial management dashboard providing comprehensive insights into personal and business finances. Features include expense tracking, budget analysis, financial reporting, and data visualization.",
+      technologies: ["React", "Tailwind CSS"],
+      github: "https://github.com/yourusername/finsight",
+      demo: "https://demo-finsight.com",
+      image:
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23059669'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='white'%3EFinsight%3C/text%3E%3C/svg%3E",
     },
     {
       title: "Task Management App",
@@ -87,16 +97,6 @@ const Portfolio = () => {
       demo: "https://demo-taskmanager.com",
       image:
         "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%2310b981'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='white'%3ETask Manager%3C/text%3E%3C/svg%3E",
-    },
-    {
-      title: "Weather Analytics Dashboard",
-      description:
-        "Data visualization dashboard for weather analytics with interactive charts, real-time data updates, and predictive modeling.",
-      technologies: ["Python", "Django", "D3.js", "Pandas", "PostgreSQL"],
-      github: "https://github.com/johndoe/weather-dashboard",
-      demo: "https://demo-weather.com",
-      image:
-        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f59e0b'/%3E%3Ctext x='200' y='100' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='24' fill='white'%3EWeather Analytics%3C/text%3E%3C/svg%3E",
     },
   ];
 
@@ -147,7 +147,7 @@ const Portfolio = () => {
                   >
                     {section}
                   </button>
-                )
+                ),
               )}
             </div>
 
@@ -176,7 +176,7 @@ const Portfolio = () => {
                   >
                     {section}
                   </button>
-                )
+                ),
               )}
             </div>
           )}
